@@ -1,7 +1,7 @@
 # BATCH PROCESSES
 
 <div align="center">
-  <img src="https://github.com/mariocuomo/consistence-polyglot/blob/main/imgs/batch.jpg">
+  <img src="https://github.com/mariocuomo/polyglot-systems/blob/main/imgs/batch.jpg">
 </div>
 
 
