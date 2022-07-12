@@ -10,7 +10,7 @@ Il database NoSQL è il database slave: esso non riceve richieste di scrittura d
 Per semplicità consideriamo l'inserimento di record (**email**,**nome**) e creazione di documenti con struttura equivalente.
 
 <div align="center">
-  <img src="https://github.com/mariocuomo/consistence-polyglot/blob/main/imgs/MySQLMongo.jpg">
+  <img src="https://github.com/mariocuomo/polyglot-systems/blob/main/imgs/MySQLMongo.jpg">
 </div>
 
 
@@ -46,7 +46,7 @@ La cartella ```sito``` contiene una semplice applicazione web sviluppata in Pyth
 python run.py
 ```
 <div align="center">
-  <img src="https://github.com/mariocuomo/consistence-polyglot/blob/main/imgs/webapp.png">
+  <img src="https://github.com/mariocuomo/polyglot-systems/blob/main/imgs/webapp.png">
 </div>
 
 
