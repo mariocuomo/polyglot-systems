@@ -2,7 +2,7 @@
 Questa cartella contiene un semplice script per la creazione di una tabella virtuale in SQL Server per una sorgente dati esterna quale MongoDB.
 
 <div align="center">
-  <img src="https://github.com/mariocuomo/consistence-polyglot/blob/main/imgs/polybase.png">
+  <img src="https://github.com/mariocuomo/polyglot-systems/blob/main/imgs/polybase.png">
 </div>
 
 
