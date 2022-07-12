@@ -1,7 +1,7 @@
 # COORDINATOR ASYNCHRONOUS QUEUE
 
 <div align="center">
-  <img src="https://github.com/mariocuomo/consistence-polyglot/blob/main/imgs/queue.jpg">
+  <img src="https://github.com/mariocuomo/polyglot-systems/blob/main/imgs/queue.jpg">
 </div>
 
 
