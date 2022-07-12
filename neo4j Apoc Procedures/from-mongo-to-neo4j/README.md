@@ -2,7 +2,7 @@
 Questo repository contiene un esempio di come trasformare dati da un database Mongodb a una struttura a grafo in neo4j attraverso le **Awesome Procedures On Cypher** (APOC).
 
 <div align="center">
-  <img src="https://github.com/mariocuomo/consistence-polyglot/blob/main/imgs/apoc.png">
+  <img src="https://github.com/mariocuomo/polyglot-systems/blob/main/imgs/apoc.png">
 </div>
 
 Per eseguire i progetti sono necessari i seguenti strumenti
