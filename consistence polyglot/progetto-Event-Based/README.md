@@ -1,7 +1,7 @@
 # EVENT BASED BACKBONE
 
 <div align="center">
-  <img src="https://github.com/mariocuomo/consistence-polyglot/blob/main/imgs/event-based.jpg">
+  <img src="https://github.com/mariocuomo/polyglot-systems/blob/main/imgs/event-based.jpg">
 </div>
 
 
