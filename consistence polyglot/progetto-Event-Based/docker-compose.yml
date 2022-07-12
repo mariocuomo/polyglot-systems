@@ -1,0 +1,76 @@
+version: "3.3"
+
+services:
+
+  consul:
+    image: consul:latest
+    networks:
+        - progetto-net
+
+  mongo_db:
+    image: mongo
+    container_name: mongoDB  
+    restart: always
+    networks:
+      - progetto-net
+
+  database-mysql:
+    image: mysql:5.7
+    environment:
+        MYSQL_DATABASE: "db"
+        MYSQL_USER: "user"
+        MYSQL_PASSWORD: "password"
+        MYSQL_ROOT_PASSWORD: "rootpassword"
+    networks:
+        - progetto-net
+
+  api-gateway:
+    build: ./api-gateway
+    image: api-gateway
+    networks:
+        - progetto-net
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "consul"
+
+  servizioa:
+    build: ./servizioa
+    image: servizioa
+    networks:
+        - progetto-net
+    depends_on:
+      - database-mysql
+      - consul
+      - kafka
+
+  serviziod:
+    build: ./serviziod
+    image: serviziod
+    networks:
+        - progetto-net
+    depends_on:
+      - consul
+      - kafka
+      - mongo_db
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    networks:
+        - progetto-net
+  
+  kafka:
+    image: wurstmeister/kafka
+    networks:
+        - progetto-net
+    depends_on:
+        - zookeeper
+    environment:
+        KAFKA_ADVERTISED_HOST_NAME: kafka
+        KAFKA_ADVERTISED_PORT: 9092
+        KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+        KAFKA_CREATE_TOPICS: "utenze:4:1"
+
+networks:
+    progetto-net:
+        driver: bridge

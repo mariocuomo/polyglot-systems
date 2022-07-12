@@ -1,0 +1,97 @@
+*{
+  box-sizing: border-box;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 100%; /* Should be removed. Only for demonstration */
+}
+
+.left, .right {
+  width: 10%;
+}
+
+.middle {
+  width: 80%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+#relazionale {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#relazionale td, #relazionale th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#relazionale tr:nth-child(even){background-color: #f2f2f2;}
+
+#relazionale tr:hover {background-color: #ddd;}
+
+#relazionale th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(43, 58, 196);
+  color: white;
+}
+
+
+#nonrelazionale {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#nonrelazionale td, #nonrelazionale th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#nonrelazionale tr:nth-child(even){background-color: #f2f2f2;}
+
+#nonrelazionale tr:hover {background-color: #ddd;}
+
+#nonrelazionale th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(223, 89, 0);
+  color: white;
+}
+
+
+#coda {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#coda td, #coda th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#coda tr:nth-child(even){background-color: #f2f2f2;}
+
+#coda tr:hover {background-color: #ddd;}
+
+#coda th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(78,158,54);
+  color: white;
+}

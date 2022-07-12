@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+	<title>HOME PAGE</title>
+</head>
+<body>
+	<div class="row full-height">
+		<div class="column left"></div>
+		<div class="column middle" style="border: thin solid lightblue;">
+			<div align="center">
+				<h1 style="margin-bottom: 0" >BENVENUTO</h1>
+				<h2 style="margin-top: 0;font-weight: normal;margin-bottom: 0;">Synchronizing Data Using an Event-Based Backbone</h2>
+
+				<div>
+					<p>
+						Quando inserisci una nuova utenza sarà effettuata una chiamata al servizio A che memorizzerà l'utenza su un database relazionale.<br>
+						Il servizio A pubblicherà inoltre un messaggio su un canale kafka informando gli abbonati di tale inserimento.<br>
+						Il servizio D è un consumatore di messaggi sul canale di riferimento e memorizzerà l'utenza su un database NoSQL.
+					</p>
+				</div>
+
+				<form method="POST" action="/inserisci">
+					<div>
+				  		<label for="email">email</label>
+				  		<input id="email" type="text" name="email" value="{{ email }}">
+				  	</div>
+				  	<div>
+				  		<label for="nome">nome</label>
+				  		<input id="nome" type="text" name="nome" value="{{ nome }}">
+				  	</div>
+				  	<input id="my_submit" type="submit" value="inserisci">
+				</form>
+
+				<hr>
+				<h3 style="margin-top: 0;font-weight: normal;margin-bottom: 0;">
+					DATI DATABASE RELAZIONALE
+				</h3>
+                    {{ tabellaRelazionale|safe }}
+				
+				<hr style="border-top: dashed 1px;"/>
+
+				<h3 style="margin-top: 0;font-weight: normal;margin-bottom: 0;">
+					DATI DOCUMENT DATABASE
+				</h3>
+					{% autoescape false %}
+                    	{{ tabellaNonRelazionale|safe }}
+					{% endautoescape %}
+			</div>
+		</div>
+		<div class="column right"></right>
+
+	</div>
+
+</body>
+</html>

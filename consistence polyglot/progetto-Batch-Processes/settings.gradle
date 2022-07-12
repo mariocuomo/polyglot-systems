@@ -1,0 +1,12 @@
+include 'servizioa'
+include 'serviziod'
+include 'batchprocesses'
+include 'api-gateway'
+
+rootProject.name = 'bigdata-progetto2'
+
+project(':servizioa').name = 'servizioa'
+project(':serviziod').name = 'serviziod'
+project(':api-gateway').name = 'api-gateway'
+project(':batchprocesses').name = 'batchprocesses'
+

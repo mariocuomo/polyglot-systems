@@ -1,0 +1,15 @@
+include 'servizioa'
+include 'serviziod'
+include 'api-gateway'
+include 'codaasincrona'
+include 'coordinatore'
+
+rootProject.name = 'bigdata-progetto2'
+
+project(':servizioa').name = 'servizioa'
+project(':serviziod').name = 'serviziod'
+project(':api-gateway').name = 'api-gateway'
+project(':codaasincrona').name = 'codaasincrona'
+project(':coordinatore').name = 'coordinatore'
+
+

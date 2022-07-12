@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+  neo4j:
+    image: neo4j:3.5
+    hostname: neo4j
+    container_name: neo4j
+    ports:
+      - 7474:7474
+      - 7687:7687
+    environment:
+      NEO4J_AUTH: "neo4j/pass"
+      NEO4J_apoc_export_file_enabled: 'true'
+    volumes:
+      - ./neo4j/plugins:/plugins
+      - ./neo4j/script.cql:/var/script.cql
+    networks:
+      app_net:
+        ipv4_address: 172.18.1.2
+
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.18.1.0/24"
+

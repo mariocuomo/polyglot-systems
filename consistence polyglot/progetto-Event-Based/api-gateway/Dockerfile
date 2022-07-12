@@ -1,0 +1,9 @@
+FROM openjdk:11-jdk 
+
+ADD build/libs/api-gateway.jar api-gateway.jar
+
+EXPOSE 8080 
+
+ENTRYPOINT ["java", "-Xms32m", "-Xmx128m"]
+
+CMD ["-jar", "api-gateway.jar"]

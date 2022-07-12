@@ -1,0 +1,75 @@
+version: "3.3"
+
+services:
+
+  consul:
+    image: consul:latest
+    networks:
+        - progetto-net
+
+  mongo_db:
+    image: mongo
+    container_name: mongoDB  
+    restart: always
+    networks:
+      - progetto-net
+
+  database-mysql:
+    image: mysql:5.7
+    environment:
+        MYSQL_DATABASE: "db"
+        MYSQL_USER: "user"
+        MYSQL_PASSWORD: "password"
+        MYSQL_ROOT_PASSWORD: "rootpassword"
+    networks:
+        - progetto-net
+
+  api-gateway:
+    build: ./api-gateway
+    image: api-gateway
+    networks:
+        - progetto-net
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "consul"
+
+
+  codaasincrona:
+    build: ./codaasincrona
+    image: codaasincrona
+    networks:
+        - progetto-net
+    depends_on:
+      - consul
+
+  servizioa:
+    build: ./servizioa
+    image: servizioa
+    networks:
+        - progetto-net
+    depends_on:
+      - database-mysql
+      - consul
+
+  serviziod:
+    build: ./serviziod
+    image: serviziod
+    networks:
+        - progetto-net
+    depends_on:
+      - consul
+      - mongo_db
+
+  coordinatore:
+    build: ./coordinatore
+    image: coordinatore
+    networks:
+        - progetto-net
+    depends_on:
+      - consul
+      - mongo_db
+  
+networks:
+    progetto-net:
+        driver: bridge
