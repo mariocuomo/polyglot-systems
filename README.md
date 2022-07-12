@@ -9,7 +9,7 @@ Questo repository contiene 3 progetti relativi allo studio dei sistemi poliglott
   questa cartella contiene uno script per la creazione di una tabella virtuale in SQL Server
 
 <div align="center">
-  <img src="https://github.com/mariocuomo/consistence-polyglot/blob/main/imgs/wordcloud.png" width="550">
+  <img src="https://github.com/mariocuomo/polyglot-systems/blob/main/imgs/wordcloud.png" width="550">
 </div>
 
 
